@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Counter Using HTML</h1>
+    <div class="box">
+        <h3>Your Current Count is: <span id="count"></span></h3>
+
+        <hr>
+
+        <span id="error"></span>
+    </div>
+
+    <button onclick="Decrement()" class="btn">Decrement</button>
+    <button onclick="Increment()" class="btn">Increment</button>
+    <button onclick="Clear()" class="clear">Clear</button>
+    <script>
+        var newnum = 0;
+        var counter = document.getElementById('count')
+        counter.innerHTML = newnum;
+        
+
+         Increment=()=> {
+            newnum++
+            counter.innerHTML = newnum
+        }
+
+
+         Decrement=() =>{
+            newnum--
+            if (newnum < 0) {
+                document.getElementById('error').innerHTML = "Error : Cannot go below 0"
+                newnum =0
+
+            } else {
+                counter.innerHTML = newnum
+            }
+        }
+
+         Clear=() =>{
+            document.getElementById('error').innerHTML = ""
+            newnum =0
+            counter.innerHTML = newnum
+            
+            
+        }
+
+    </script>
+
+</body>
+
+</html>
